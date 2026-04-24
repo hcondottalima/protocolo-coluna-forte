@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Protocolo de fortalecimento da coluna para diferentes perfis, com acompanhamento e acessibilidade.">
+  <title>Protocolo Coluna Forte</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>🦴 Protocolo Coluna Forte</h1>
+      <div class="controls">
+        <select id="persona-select" aria-label="Selecionar Persona">
+          <option value="henrique">Henrique (40 anos, Lombar)</option>
+          <option value="carmem">Carmem (35 anos, Cervical)</option>
+          <option value="jose">José (80+, Ciático/Lombar)</option>
+          <option value="rose">Rose (60+, Manutenção)</option>
+        </select>
+        <button id="font-toggle" aria-label="Aumentar tamanho da fonte">🔍 Fonte</button>
+        <button id="contrast-toggle" aria-label="Alternar alto contraste">🌓 Contraste</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="overview" class="card">
+      <h2>📋 Seu Protocolo Personalizado</h2>
+      <p id="persona-desc">Selecione sua persona para iniciar.</p>
+      <div id="quick-stats" class="stats"></div>
+    </section>
+
+    <section id="accordion-container">
+      <h2>📅 Cronograma Semanal</h2>
+      <div id="weeks-list"></div>
+    </section>
+
+    <section id="pain-tracker" class="card">
+      <h2>🩺 Registro de Dor & Orientação</h2>
+      <label for="pain-slider">Como está sua dor hoje? (0-10)</label>
+      <input type="range" id="pain-slider" min="0" max="10" step="1" value="0">
+      <div id="pain-feedback" class="pain-msg neutral">0: Livre de dor. Continue a progressão.</div>
+      <button id="log-pain" class="btn">Registrar no diário</button>
+      <div id="pain-log" class="log-list"></div>
+    </section>
+
+    <section id="visual-guide" class="card">
+      <h2>🖼️ Guia Visual (Esquemas Técnicos)</h2>
+      <p class="guide-intro">Descrições detalhadas para criação futura de ilustrações ou vídeos.</p>
+      <div id="visual-list"></div>
+    </section>
+
+    <section id="backup" class="card">
+      <h2>💾 Backup & Restauração</h2>
+      <div class="backup-actions">
+        <button id="export-btn" class="btn secondary">📥 Exportar Progresso (JSON)</button>
+        <input type="file" id="import-file" accept=".json" hidden>
+        <button id="import-btn" class="btn secondary">📤 Importar Progresso</button>
+      </div>
+      <p class="small-text">Seus dados são salvos localmente. Use o export/import para não perder o histórico ao trocar de dispositivo.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>📖 Baseado em evidências científicas de reabilitação espinhal. Consulte um profissional antes de iniciar.</p>
+      <button id="print-btn" class="btn">🖨️ Imprimir / Salvar PDF</button>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
